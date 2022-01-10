@@ -1,0 +1,13 @@
+Módulo de Informações Cadastrais:
+ - Responsavel por agregar as todas os dados da empresa capturando os dados de seus sistemas origem a armazenando os mesmos. 
+ 
+Módulo de Serviços ao Cliente:
+ - Fazer um fluxo do processo de cadastro de rota e cadastro de uma mercadoria. 
+ 
+ 
+SAF: 
+- Contrução de API's que possam ser usadas em um novo fornt bem como remover o alto acoplamento do SGE no SAF
+
+SFC: 
+- Implementar melhoria na Emissão do CTe + DACTe para subistituir o CTRC que já não é mais utilizado. 
+
