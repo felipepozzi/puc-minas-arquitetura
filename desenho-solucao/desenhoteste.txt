@@ -1,13 +1,69 @@
-Módulo de Informações Cadastrais:
- - Responsavel por agregar as todas os dados da empresa capturando os dados de seus sistemas origem a armazenando os mesmos. 
- 
-Módulo de Serviços ao Cliente:
- - Fazer um fluxo do processo de cadastro de rota e cadastro de uma mercadoria. 
- 
- 
-SAF: 
-- Contrução de API's que possam ser usadas em um novo fornt bem como remover o alto acoplamento do SGE no SAF
+SAF:
+- Contrução de API's que possam ser usadas em um novo front bem como remover o alto acoplamento do SGE no SAF
+- Realizar a atualizaçõa do .NET CORE para o .NET 6
+	-> Essa atulização garante a possibilidade de criação de Aplicações MVC
+	-> Criação de API's 
+	-> Suporta microerviços independentes e escalavel e resiliente
+	-> Possibilita a criação de aplicações multiplataforma,desktop, mobile (IOS, Android) e WEB
+	-> Habilita o ASP.NET e possibilita trabalhar com Angular e React
+https://docs.microsoft.com/en-us/aspnet/core/migration/31-to-60?view=aspnetcore-6.0&tabs=visual-studio
+https://www.c-sharpcorner.com/article/future-of-dot-net/
+
 
 SFC: 
 - Implementar melhoria na Emissão do CTe + DACTe para subistituir o CTRC que já não é mais utilizado. 
+- Habilitando assim a empresa a fazer empresas parcerias com empreas aereas, hidroviaria bem como terrestes
+- Integração com o SAF para melhorar a gestão financeira, quando um CT-e a emissão da fatura de cobrança é gerada sem a 
+	necessidade de imput manual e sem a necessidade de diversos ducumentos em caso de fiscalização.
+
+SGE: 
+- Através das novas API's do SAF realizar o desacoplamento do SAF. 
+- Melhorar o processo de gerenciamento de entrega, onde seja possivel o acompanhamento das entregas em realtime ou near realtime.
+	-> Alterar o modulo de acompanhamento de entregas para que ele seja um processo sincrono e que possa gerar eventos referente as entregas
+	-> A cada entrega deve ser atualizada o status automatico e não no final do dia como é hoje
+- Melhorar o processo de gestão de estoque
+	-> cliente parametriza o limite minimo de estoque para novo reabastecimento, irá receber uma aviso que o estoque esta baixo
+	-> cliente é avisado a cada compra e de onde saira o produto, nivel de estoque.
+
+Portal Corporativo:
+- Colocar uma camada de segurança, acesso via SSO pegando as informações do AD da empresa
+- Definir perfis de acesso para clientes/colaboradores/parceiros
+- Aumentar a segurança colocando um padrão se senha mais forte, alteração de senha a cada 90 dias e habilitando o MFA
+
+
+Módulo de Informações Cadastrais:
+ - Responsavel por agregar as todas os dados da empresa capturando os dados de seus sistemas origem a armazenando os mesmos.
+ - Gerar relatorios de estoque dos clientes com base nas informações do SGE.
+	-> Informações de clientes
+		-> Mercadorias 
+		-> Depósitos
+		-> Identificação
+		-> Dados de localização
+		-> Dados complementares 
+		-> Informações necessárias ao negócio da empresa. (geolocalização)
+	-> Fornecedores
+ - Gerar relatorios financeiro das entregas faturadas a serem realizadas no dia. SGE e SFC
+ 
+Módulo de Serviços ao Cliente:
+ - Fazer um fluxo do processo de cadastro de rota e cadastro de uma mercadoria.
+	-> Desenhar os fluxo e suas integrações com os sistemas novos ou legados
+ - Fazer o fluxo de cadastro de rotas para cliente
+	-> Seleção de rotas ja existentes
+	-> Criação de rota
+	-> Aprovação de criação de rotas
+	-> Alteração de rotas
+ - Fluxo para palnejar entregas
+	-> Seleção de rotas - SGE
+	-> Data da entrega - SGE
+	-> Geração de CT-e SFC
+	-> Geração de faturamento 
+	-> Financeiro - SAF
+
+
+Módulo de Gestão Estratégia:
+ - Deve consumir as informações disponibilizdas pelo modulo de informações cadastrais
+
+Módulo de Ciência de Dados - Data Warehouse (DW) e Business Intelligence (BI): 
+- Deve ser alimentando atraves de eventos que ocorrem no sistema. 
+- Carga dos dados pode ser realizada atraves de CDC
 
