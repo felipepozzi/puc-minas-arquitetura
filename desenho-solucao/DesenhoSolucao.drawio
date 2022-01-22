@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-01-22T00:07:49.441Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="HU3_29qFNDM4C5myPpb3" version="16.4.3" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2022-01-22T13:56:20.361Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="r6F3nsCzes_UiyGTzjb-" version="16.4.3" type="github" pages="6">
   <diagram id="a_hgnYMxLtOfGRJjbgYr" name="Page-1">
     <mxGraphModel dx="2064" dy="1832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -342,6 +342,14 @@
         </mxCell>
         <mxCell id="2vkv0Wdcapq11pCmoKqH-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="VnQ-xHU3ctC5qV2thkRt-1" source="XJ0fjQjQ6GNmjfCHUbMg-2" target="2vkv0Wdcapq11pCmoKqH-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oBkKSLXqBQmhGPJuVQhZ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#3333FF;strokeColor=#3333FF;" edge="1" parent="VnQ-xHU3ctC5qV2thkRt-1" source="XJ0fjQjQ6GNmjfCHUbMg-2" target="fSowH_fATZCFTwldadWP-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="528.1500000000001" />
+              <mxPoint x="810" y="300.08000000000004" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="XJ0fjQjQ6GNmjfCHUbMg-2" value="Data Warehouse (DW) e &#xa;Business Intelligence (BI)" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="VnQ-xHU3ctC5qV2thkRt-1" vertex="1">
           <mxGeometry x="615" y="508.15" width="170" height="40" as="geometry" />
