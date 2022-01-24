@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-01-24T18:05:37.341Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="vCtAQfoPeyKjB6PkXRsq" version="16.4.3" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2022-01-24T19:08:57.300Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="A0fOJCwSYCPl8-x-n7v4" version="16.4.3" type="github" pages="6">
   <diagram id="a_hgnYMxLtOfGRJjbgYr" name="Page-1">
     <mxGraphModel dx="2605" dy="2122" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -838,7 +838,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="rgWo3Qzw30nGDXEVmVq4" name="Diagrama de Componentes">
-    <mxGraphModel dx="2858" dy="2176" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2249" dy="1874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="AnNdEeLxpYCObJ-BD8jF-0" />
         <mxCell id="AnNdEeLxpYCObJ-BD8jF-1" parent="AnNdEeLxpYCObJ-BD8jF-0" />
@@ -906,7 +906,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="6o_Ltp-xCu-T8ufay-mk-2" value="«microservice»&lt;br&gt;&lt;b&gt;Portal Corporativo&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
+        <mxCell id="6o_Ltp-xCu-T8ufay-mk-2" value="«component»&lt;br&gt;&lt;b&gt;Portal Corporativo&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
           <mxGeometry x="355" y="-27" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="6o_Ltp-xCu-T8ufay-mk-3" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontColor=#000000;" vertex="1" parent="6o_Ltp-xCu-T8ufay-mk-2">
@@ -914,7 +914,7 @@
             <mxPoint x="-27" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6o_Ltp-xCu-T8ufay-mk-4" value="«microservice»&lt;br&gt;&lt;b&gt;SFC&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
+        <mxCell id="6o_Ltp-xCu-T8ufay-mk-4" value="«component»&lt;br&gt;&lt;b&gt;SFC&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
           <mxGeometry x="520" y="165" width="140" height="55" as="geometry" />
         </mxCell>
         <mxCell id="6o_Ltp-xCu-T8ufay-mk-5" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontColor=#000000;" vertex="1" parent="6o_Ltp-xCu-T8ufay-mk-4">
@@ -931,7 +931,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="6o_Ltp-xCu-T8ufay-mk-6" value="«microservice»&lt;br&gt;&lt;b&gt;SAF&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
+        <mxCell id="6o_Ltp-xCu-T8ufay-mk-6" value="«component»&lt;br&gt;&lt;b&gt;SAF&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
           <mxGeometry x="350" y="165" width="140" height="55" as="geometry" />
         </mxCell>
         <mxCell id="6o_Ltp-xCu-T8ufay-mk-7" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontColor=#000000;" vertex="1" parent="6o_Ltp-xCu-T8ufay-mk-6">
@@ -959,7 +959,7 @@
             <mxPoint x="100" y="193" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6o_Ltp-xCu-T8ufay-mk-8" value="«microservice»&lt;br&gt;&lt;b&gt;SGE&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
+        <mxCell id="6o_Ltp-xCu-T8ufay-mk-8" value="«component»&lt;br&gt;&lt;b&gt;SGE&lt;/b&gt;" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
           <mxGeometry x="175" y="165" width="140" height="55" as="geometry" />
         </mxCell>
         <mxCell id="6o_Ltp-xCu-T8ufay-mk-9" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontColor=#000000;" vertex="1" parent="6o_Ltp-xCu-T8ufay-mk-8">
@@ -1083,7 +1083,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="BTLoP5GXZCxxWklplk5T-5" value="«microservice»&lt;br&gt;Gestão Estratégica" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
+        <mxCell id="BTLoP5GXZCxxWklplk5T-5" value="«component»&lt;br&gt;Gestão Estratégica" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
           <mxGeometry x="600" y="285" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="BTLoP5GXZCxxWklplk5T-6" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontColor=#000000;" vertex="1" parent="BTLoP5GXZCxxWklplk5T-5">
@@ -1096,7 +1096,7 @@
             <mxPoint x="740" y="452" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JgbvKKy1De18nfug-opi-0" value="«microservice»&lt;br&gt;Informações Cadastrais" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
+        <mxCell id="JgbvKKy1De18nfug-opi-0" value="«component»&lt;br&gt;Informações Cadastrais" style="html=1;dropTarget=0;fontColor=#000000;" vertex="1" parent="AnNdEeLxpYCObJ-BD8jF-1">
           <mxGeometry x="810" y="416.5" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="JgbvKKy1De18nfug-opi-1" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontColor=#000000;" vertex="1" parent="JgbvKKy1De18nfug-opi-0">
