@@ -1,3 +1,19 @@
+OBJETIVOS OPERACIONAIS
+1. Realizar todas as entregas com tempo médio inferior a 5 dias úteis;
+2. Expandir a atuação para mais 200 municípios de pequeno/médio porte;
+3. Passar a atuar na região norte do Brasil, último reduto que ela ainda não cobre, fazendo parcerias
+com uma empresa aérea e outras empresas de logística terrestre locais;
+4. Desenvolver novas parcerias com outras transportadoras, visando complementar sua atuação em 
+lugares onde ela apresenta maketshare inferior a 10%;
+5. Fazer convênio com no mínimo 50 novos clientes, preferencialmente do ramo supermercadista;
+6. Crescer 10% em termos de faturamento global.
+
+PARA ATINGIR ESSES OBJETIVOS: 
+1. Manter registros de todas as suas operações (entregas/clientes/rotas/armazens/mercadorias)
+2. Prestar conta das entregas realizadas (situação das entregas on-line)
+3. Boa gestão financeira (melhoria no processo de emissão do CT-e)
+4. Gestão dos estoques dos armazens.
+
 SAF:
 - Contrução de API's que possam ser usadas em um novo front bem como remover o alto acoplamento do SGE no SAF
 - Realizar a atualizaçõa do .NET CORE para o .NET 6
@@ -31,7 +47,7 @@ Portal Corporativo:
 - Aumentar a segurança colocando um padrão se senha mais forte, alteração de senha a cada 90 dias e habilitando o MFA
 
 
-Módulo de Informações Cadastrais:
+I. Módulo de Informações Cadastrais:
  - Responsavel por agregar as todas os dados da empresa capturando os dados de seus sistemas origem a armazenando os mesmos.
  - Gerar relatorios de estoque dos clientes com base nas informações do SGE.
 	-> Informações de clientes
@@ -43,8 +59,14 @@ Módulo de Informações Cadastrais:
 		-> Informações necessárias ao negócio da empresa. (geolocalização)
 	-> Fornecedores
  - Gerar relatorios financeiro das entregas faturadas a serem realizadas no dia. SGE e SFC
+	-> atualização on-line das entregas a serem realizadas
+	-> CASOS DE USO:
+	Receber mensagem do SGE para novas entregas 
+	Receber mensagem do SAF novo faturamento
+	Receber mensagem de gerenciamento de estoques
+	
  
-Módulo de Serviços ao Cliente:
+II. Módulo de Serviços ao Cliente:
  - Fazer um fluxo do processo de cadastro de rota e cadastro de uma mercadoria.
 	-> Desenhar os fluxo e suas integrações com os sistemas novos ou legados
  - Fazer o fluxo de cadastro de rotas para cliente
@@ -60,10 +82,13 @@ Módulo de Serviços ao Cliente:
 	-> Financeiro - SAF
 
 
-Módulo de Gestão Estratégia:
+III . Módulo de Gestão Estratégia:
  - Deve consumir as informações disponibilizdas pelo modulo de informações cadastrais
+ -> CASO DE USO
+ - receber informações das entregas online SGE
+ - Gerar relatorios de clientes vs entregas METAS
 
-Módulo de Ciência de Dados - Data Warehouse (DW) e Business Intelligence (BI): 
+IV. Módulo de Ciência de Dados - Data Warehouse (DW) e Business Intelligence (BI) "Amazon QuickSight": 
 - Deve ser alimentando atraves de eventos que ocorrem no sistema. 
 - Carga dos dados pode ser realizada atraves de CDC
 
