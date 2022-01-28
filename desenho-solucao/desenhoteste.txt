@@ -9,9 +9,9 @@ lugares onde ela apresenta maketshare inferior a 10%;
 6. Crescer 10% em termos de faturamento global.
 
 PARA ATINGIR ESSES OBJETIVOS: 
-1. Manter registros de todas as suas operações (entregas/clientes/rotas/armazens/mercadorias)
-2. Prestar conta das entregas realizadas (situação das entregas on-line)
-3. Boa gestão financeira (melhoria no processo de emissão do CT-e)
+1. Manter registros de todas as suas operações
+2. Prestar conta das entregas realizadas
+3. Boa gestão financeira
 4. Gestão dos estoques dos armazens.
 
 SAF:
@@ -48,23 +48,13 @@ Portal Corporativo:
 
 
 I. Módulo de Informações Cadastrais:
- - Responsavel por agregar as todas os dados da empresa capturando os dados de seus sistemas origem a armazenando os mesmos.
- - Gerar relatorios de estoque dos clientes com base nas informações do SGE.
-	-> Informações de clientes
-		-> Mercadorias 
-		-> Depósitos
-		-> Identificação
-		-> Dados de localização
-		-> Dados complementares 
-		-> Informações necessárias ao negócio da empresa. (geolocalização)
-	-> Fornecedores
- - Gerar relatorios financeiro das entregas faturadas a serem realizadas no dia. SGE e SFC
-	-> atualização on-line das entregas a serem realizadas
-	-> CASOS DE USO:
-	Receber mensagem do SGE para novas entregas 
-	Receber mensagem do SAF novo faturamento
-	Receber mensagem de gerenciamento de estoques
-	
+ - Responsavel por realizar consultas no SGE SAF e SCF para consultar os dados de clientes, fornecedores, depositos e mercadorias.
+ - Deve disponibilizar uma API para realização de pedidos
+		-> solicitaçãoes de entregas
+		-> consullta de status das ordems
+ - Deve disponibilizar uma API para parceiros para que possamos realizar o agendamento de uma entrega em uma de suas rotas () WEBHOOK
+ - Disponibilizar uma api com 
+
  
 II. Módulo de Serviços ao Cliente:
  - Fazer um fluxo do processo de cadastro de rota e cadastro de uma mercadoria.
@@ -83,10 +73,46 @@ II. Módulo de Serviços ao Cliente:
 
 
 III . Módulo de Gestão Estratégia:
- - Deve consumir as informações disponibilizdas pelo modulo de informações cadastrais
+X - Deve consumir as informações utiizando as interfaces dos sistemas legado SGE, SAF e SCF
  -> CASO DE USO
- - receber informações das entregas online SGE
- - Gerar relatorios de clientes vs entregas METAS
+ *******############### seria fazer a gestão das entregas, gerando indicadores, relatórios, etc.
+	- Gerar relatorios de entregas futuras
+	- Gerar relatorios de entregas efetivadas no dia 
+	- Gerar indicadores de atingimento de metas entregas futuras + atual VS metas
+	- Gerar notificação dos estoques dos clientes
+	- Gerar relatorios de faturas pagas vs abertas vs futuras
+############## CASO de Uso H1: ###############
+ - Gerar relatorios de estoque dos clientes com base nas informações do SGE.
+	-> Informações de clientes
+		-> Mercadorias 
+		-> Depósitos
+		-> Identificação
+		-> Dados de localização
+		-> Dados complementares 
+		-> Informações necessárias ao negócio da empresa. (geolocalização)
+	-> Fornecedores
+ - Gerar relatorios financeiro das entregas faturadas a serem realizadas no dia. SGE e SFC
+	- OTIF (On Time, In Full): OTIF (On Time, In Full): indica o total de pedidos entregues no prazo acordado; é necessário comparar a quantidade total de entregas efetuadas com aquelas que foram entregues realmente dentro do prazo (o OTIF pode ser medido todos os dias). O funcionamento de qualquer negócio deve ter como meta a satisfação de seus clientes. Essa é uma das principais razões para que você não deixe de acompanhar o OTIF, já que ele mensura a eficiência da logística pela ótica do consumidor. 
+
+	Em resumo, temos um indicador que observa se o pedido foi entregue no prazo (on-time) e se os demais processos de atendimento e logísticos foram eficientes (in-full). Em outras palavras, verifica-se se o cliente recebeu a mercadoria que pediu, no prazo e no endereço correto. A fórmula é a seguinte: 
+
+	OTIF = número de entregas OTIF / número total de entregas x 100 
+
+	Para obter resultados confiáveis e aproveitar os dados colhidos, é aconselhável ter os registros de data e hora em que o pedido foi feito, contar com uma previsão de entrega ao cliente e, claro, manter as informações de OTIF atualizadas. 
+
+	 
+
+	OTD (On Time Delivery): Esse indicador logístico é de grande relevância no contexto de uma indústria, pois visa mensurar o percentual de pedidos entregues no prazo ajustado. 
+
+	Destaca-se que, como a intenção é avaliar o tempo gasto entre a separação e expedição do produto até a efetiva entrega pela transportadora, os dados incorretos de especificação dos pedidos não são levados em consideração. Observe o cálculo: 
+
+	OTD = total de entregas do prazo / total de entregas x 100 
+
+	Para que esse indicador seja acompanhado da maneira mais produtiva possível, é recomendado que os dados sejam conferidos diariamente e que o percentual sempre esteja acima dos 90%. 
+
+	 
+
+	OTP (On Time Processing): indica o tempo total de processamento do pedido, desde a separação até a expedição para a empresa transportadora (esse indicador se torna mais eficiente quando se trabalha com fulfillment — ou operador logístico). 
 
 IV. Módulo de Ciência de Dados - Data Warehouse (DW) e Business Intelligence (BI) "Amazon QuickSight": 
 - Deve ser alimentando atraves de eventos que ocorrem no sistema. 
