@@ -1,0 +1,365 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/felipepozzi/boaEntrega/1.0.0
+info:
+  version: "1.0.0"
+  title: PUC Minas - Boa Entrega
+  description: >-
+    Trabalho de conclusão de Curso da PUC Minas, Arquitetura de Sistemas Distribuidos
+    Aluno Felipe Pozzibon
+security:
+  - accessCode:
+      - read
+      - write
+paths:
+  /pedidos:
+    get:
+      summary: Consulta pedidos de um cliente a partir de uma data.
+      parameters: 
+      - in: query
+        name: codigo_cliente
+        schema:
+          type: string
+          description: Campo utilizado para identificar um cliente.
+        required: true
+      - in: query
+        name: data_pedido
+        schema:
+          type: string
+          description: Campo utilizado para indicar a data do pedido.
+        required: true
+      description: >-
+        Esse é um exemplo de consulta dos pedidos de um cliente. 
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pedidos'
+    post:
+      summary: Criação de pedidos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pedidos'
+      description: >-
+        Esse é um exemplo de chamada para a criação de pedido
+      responses:
+        '201':
+          description: OK
+  /pedidos/{codigo_pedido}:
+    get:
+      summary: Rota utilizada para a consulta de um pedido a 
+        partir do id_pedido
+      parameters:
+        - in: path
+          name: codigo_pedido
+          schema:
+            type: string
+          required: true
+      description: >-
+        Esse é um exemplo de chamada utlizada para consulta um pedido por id.
+      security: []
+      responses:
+        '200':
+          description: OK
+    patch:
+      summary: Atualiza informações do pedido
+      description: >- 
+        Essa rota permite que algumas informações de pedidos sejam atualizadas
+      security: []
+      responses:
+        '200':
+          description: OK
+  /entregas/{codigoPedido}/status:
+      get:
+        summary: Server heartbeat operation
+        parameters:
+          - in: path
+            name: codigo_pedido
+            schema:
+              type: string
+            required: true
+        description: >-
+          Essa operação mostra o status de um entrega
+        security: []
+        responses:
+          '200':
+            description: OK
+      patch:
+        summary: Server heartbeat operation
+        description: >-
+          Essa operação ATUALIZA o status de um entrega
+        security: []
+        responses:
+          '200':
+            description: OK
+  /indicadores:
+    get:
+      summary: Indicadores de entregas
+      parameters:
+        - in: query
+          name: codigoRelatorio
+          schema: 
+            type: string
+            enum: ['OTIF', 'OTD', 'OTP']
+      description: >-
+        Essa operação mostra o status de um entrega
+      security: []
+      responses:
+        '200':
+          description: OK
+  /entrega_parceiros/:
+    post:
+      summary: >- 
+        Webhook que será consumido por parceiros, para que eles possam pegar os
+        pedidos dentro da rota deles.       
+      description: >-
+        Essa operação mostra o status de um entrega
+      security: []
+      responses:
+        '200':
+          description: OK
+    patch:
+      summary: Server heartbeat operation
+      description: >-
+        
+      security: []
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Pedidos:
+      type: object
+      properties:
+        id_pedido: 
+          type: string
+          description: Código do pedido gerado no momento da compra
+        id_cliente: 
+          type: string
+          description: Código do cliente da operadora de logistica.
+        data_compra: 
+          type: string
+          description: Data e horario da compra
+        data_entrega: 
+          type: string
+          description: Data prevista que a entrega será realizada
+        id_entrega: 
+          type: string
+          description: Codigo que indentifica a entrega
+        status_pedido: 
+          type: string
+          enum: ['Aprovado','Pendente']
+          description: Status do pedido 
+        detalhes_pedido: 
+          type: object
+          $ref: '#/components/schemas/Detalhes_pedido'
+          description: detalhes do pedido
+      example:
+        id_pedido: '98578'
+        id_cliente: '12548'
+        nome_cliente: 'Americanas'
+        data_compra: '2022-01-28T11:52:58'
+        data_entrega: '2022-02-02'
+        status_pedido: 'Em Andamento'
+        detalhes_pedido: {
+          id_consumidor: '12585',
+          nome_consumidor: 'joao da silva',
+          id_endereco_consumidor: '85478585g87658',
+          items: [
+            {
+              id_mercadoria: '125',
+              quantidade: '2',
+              nome_mercadoria: 'Drone',
+              valor_unitario: 10.25
+            }
+          ],
+          dados_entrega: {
+            id_entrega: '12458',
+            data_entrega: '2022-02-28',
+            status_entrega: 'Em rota de entrega',
+            id_rota: '1245',
+            valor_frete: '10.90',
+            latitude_origem: '37.33182',
+            longitude_origem: '-122.03118',
+            latitude_destino: '38.8719',
+            longitude_destino: '77.0563',
+            id_veiculo: '8as587',
+            entrega_parceiro: false,
+            id_parceiro: 'NA',
+            endereco: 'Rua são joao da silva',
+            cep: '0314144',
+          },
+          valor_total: 31.40
+        }
+
+    Detalhes_pedido: 
+      type: object
+      properties:
+        id_consumidor: 
+          type: string
+          description: Codigo que identifica o cliente que realizou a compra
+        nome_consumidor: 
+          type: string
+          description: Nome do cliente que efetuou a compra
+        id_endereco_consumidor: 
+          type: string
+          description: Endereço onde a entrega deve ser realizada
+        items: 
+          type: array
+          $ref: '#/components/schemas/Item'
+        valor_total: 
+          type: number
+          description: The user id
+        dados_entrega: 
+          type: object
+          $ref: '#/components/schemas/Entrega'
+      example:
+        id_pedido: '98578'
+        id_cliente: '12548'
+        id_consumidor: '12585'
+        nome_consumidor: 'joao da silva'
+        id_endereco_consumidor: '98567785-h898-555'
+        items: [
+          {
+          id_mercadoria: '125',
+          quantidade: '2',
+          nome_mercadoria: 'Drone',
+          valor_unitario: 10.25,
+          valor_total: 31.40,
+          id_deposito: '12415989694sa68s'
+          }
+        ]
+        data_compra: '2022-01-28T11:52:58'
+        valor_frete: 10.90
+        entrega: {
+          id_entrega: '12458',
+          data_compra: '2022-01-28T11:52:58',
+          data_entrega: '2022-02-28',
+          status_entrega: 'Em rota de entrega',
+          id_rota: '1245',
+          valor_frete: '10.90',
+          latitude_origem: '37.33182',
+          longitude_origem: '-122.03118',
+          latitude_destino: '38.8719',
+          longitude_destino: '77.0563',
+          id_veiculo: '8as587',
+          entrega_parceiro: false,
+          id_parceiro: 'NA'
+        }
+
+    Item: 
+      type: object
+      properties:
+        id_mercadoria: 
+          type: string
+          description: Codigo que identifica a mercadoria
+        nome_mercadoria:
+          type: string
+          description: Nome do produto que será entregue
+        quantidade: 
+          type: string
+          description: quantidade de produtos comprados
+        valor_unitario: 
+          type: number
+          description: The user id
+        id_deposito:
+          type: string
+          description: codigo do deposito
+      example:
+        id_mercadoria: '12358'
+        nome_mercadoria: 'Drone'
+        quantidade: '2'
+        valor_unitario: 100.23 
+        id_deposito: '12346678dfde'
+
+    Entrega: 
+      type: object
+      properties:
+        id_entrega:
+          type: string
+          description: The user id
+        id_pedido: 
+          type: string
+          description: The user id
+        data_entrega: 
+          type: string
+          description: The user id
+        status_entrega: 
+          type: string
+          enum: ['Pendente','Concluido','Em rota de entrega','Atrasado' ]
+          description: The user id
+        id_rota:
+          type: string
+          description: The user id
+        valor_frete: 
+          type: string
+          description: The user id
+        endereço:
+          type: string
+          description: Endereço da entrega
+        cep:
+          type: string
+          description: numero do cep da rua onde será realizada a entrega
+        numero: 
+          type: integer
+          description: numero da resisdência
+        complemento:
+          type: string
+          description: complemento residência
+        latitude_origem: 
+          type: string
+          description: The user id
+        longitude_origem: 
+          type: string
+          description: The user id
+        longitude_destino: 
+          type: string
+          description: The user id
+        latitude_destino: 
+          type: string
+          description: The user id
+        id_veiculo: 
+          type: string
+          description: The user id
+        entrega_parceiro: 
+          type: boolean
+          description: The user id
+        id_parceiro: 
+          type: string
+          description: The user id
+      example:
+        id_entrega: '12458'
+        data_compra: '2022-01-28T11:52:58'
+        data_entrega: '2022-02-28'
+        status_entrega: 'Em rota de entrega'
+        id_rota: '1245'
+        valor_frete: '10.90'
+        latitude_origem: '37.33182'
+        longitude_origem: '-122.03118'
+        latitude_destino: '38.8719'
+        longitude_destino: '77.0563'
+        id_veiculo: '8as587'
+        entrega_parceiro: false
+        id_parceiro: 'NA'
+        endereco: 'Rua são joao da silva'
+        cep: '0314144'
+        numero: 125
+        complemento: 'NA'
+        
+  securitySchemes:
+    accessCode:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: 'http://example.com/oauth/auth'
+          tokenUrl: 'http://example.com/oauth/token'
+          scopes:
+            write: allows modifying resources
+            read: allows reading resources
