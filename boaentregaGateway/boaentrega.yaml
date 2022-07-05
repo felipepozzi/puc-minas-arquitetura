@@ -76,29 +76,7 @@ paths:
       responses:
         '200':
           description: OK
-  /entregas/{codigoPedido}/status:
-      get:
-        summary: Server heartbeat operation
-        parameters:
-          - in: path
-            name: codigo_pedido
-            schema:
-              type: string
-            required: true
-        description: >-
-          Essa operação mostra o status de um entrega
-        security: []
-        responses:
-          '200':
-            description: OK
-      patch:
-        summary: Server heartbeat operation
-        description: >-
-          Essa operação ATUALIZA o status de um entrega
-        security: []
-        responses:
-          '200':
-            description: OK
+          
   /indicadores:
     get:
       summary: Indicadores de entregas
